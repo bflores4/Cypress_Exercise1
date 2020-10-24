@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-10-23T05:22:12.106Z",
+    "end": "2020-10-23T05:22:17.335Z",
+    "duration": 5229,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fc58d2e5-bfc1-4b3a-80d5-979508bfceec",
+      "title": "",
+      "fullFile": "cypress/integration/simpleTest/fixture.spec.js",
+      "file": "cypress/integration/simpleTest/fixture.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bf6ad3fe-25f1-4718-928b-2b785d43384f",
+          "title": "Logi with Fixtures Data",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "login",
+              "fullTitle": "Logi with Fixtures Data login",
+              "timedOut": null,
+              "duration": 3673,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.saucedemo.com/', {\n  timeout: 10000\n});\ncy.url().should('include', 'saucedemo');\ncy.fixture('userChallenge').then(function (user) {\n  var invalidUsername = user.invalidUsername;\n  var invalidPassword = user.invalidPassword;\n  cy.get('#user-name').clear();\n  cy.get('#user-name').type(invalidUsername);\n  cy.get('#password').clear();\n  cy.get('#password').type(invalidPassword);\n  cy.get('#login-button').click();\n  cy.pause();\n});\ncy.fixture('userChallenge').then(function (user) {\n  var username = user.username;\n  var password = user.password;\n  cy.get('#user-name').clear();\n  cy.get('#user-name').type(username);\n  cy.get('#password').clear();\n  cy.get('#password').type(password);\n});\ncy.get('#login-button').click();\ncy.url().should('include', 'inventory.html');",
+              "err": {},
+              "uuid": "38c5dd13-e8f8-4cc8-8358-d122bb9cd865",
+              "parentUUID": "bf6ad3fe-25f1-4718-928b-2b785d43384f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "38c5dd13-e8f8-4cc8-8358-d122bb9cd865"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3673,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "quite": true,
+        "overwrite": true,
+        "html": true,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "5.1.0"
+    }
+  }
+}
